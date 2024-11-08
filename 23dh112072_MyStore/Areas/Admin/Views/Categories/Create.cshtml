@@ -1,0 +1,23 @@
+﻿@model _23dh112072_MyStore.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="bg-success">Tạo mới</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal" style="padding:10px;">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            
+        @Html.Partial("PV_CreateEdit",Model)
+    </div>
+}
+
+
